@@ -13,24 +13,47 @@ const Chat = () => {
         w-full
         h-[100vh]
         py-4
-
+        
       '
     >
-      {
-        messages.map((message)=>{
-          const isAbuelita = message.role !=='user'
-          return (
-          <div key={message.id}>
-            <p>
-              {isAbuelita ? 'Abuela':'Yo'}
-              <span
-                className={`${isAbuelita ? 'text-yellow-500':'text-blue-500'}`}>
-                {message.content}
-              </span>
-            </p>
-          </div>
-        )})
-      }
+      <div className="
+        flex
+        flex-col
+        items-start
+        justify-end
+        w-full
+        h-screen
+        px-4
+        pl-6
+        pb-24
+        pt-12
+
+      ">
+        {
+          messages.map((message) => {
+            const isAbuelita = message.role !== 'user'
+            return (
+              <div
+                key={message.id}
+                className='
+                  py-1
+                '
+              >
+                <p className=' text-lg'>
+                  {isAbuelita ? '👩‍🦱 ' : '🙋 '}
+                  <span
+                    className={`
+                      ${isAbuelita ? 'text-yellow-500' : 'text-gray-600 '}`}
+                    >
+                    {message.content}
+                  </span>
+                </p>
+              </div>
+            )
+          })
+        }
+      </div>
+      
       <form
         onSubmit={handleSubmit}
         className='

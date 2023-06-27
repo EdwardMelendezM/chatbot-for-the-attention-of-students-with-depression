@@ -13,7 +13,9 @@ export default function Home() {
         gap-4
         "
       >
+      
       <Logo />
+
         
       <div
         className="
