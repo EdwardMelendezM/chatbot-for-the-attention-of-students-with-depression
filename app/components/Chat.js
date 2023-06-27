@@ -23,11 +23,12 @@ const Chat = () => {
         justify-end
         w-full
         h-screen
-        px-4
+        px-10
+        md:px-8
         pl-6
         pb-24
-        pt-12
-
+        pt-14
+        overflow-y-auto
       ">
         {
           messages.map((message) => {
@@ -39,11 +40,11 @@ const Chat = () => {
                   py-1
                 '
               >
-                <p className=' text-lg'>
+                <p className=' text-sm'>
                   {isAbuelita ? '👩‍🦱 ' : '🙋 '}
                   <span
                     className={`
-                      ${isAbuelita ? 'text-yellow-500' : 'text-gray-600 '}`}
+                      ${isAbuelita ? 'text-gray-600' : 'text-gray-700 '}`}
                     >
                     {message.content}
                   </span>
@@ -86,13 +87,14 @@ const Chat = () => {
             bottom-7
             left-6
             outline-none
+            text-sm
 
           '
         />
         <button
           className='
-            py-4
-            px-5
+            py-3
+            px-4
             bg-gray-700
             rounded-full 
             text-gray-100
